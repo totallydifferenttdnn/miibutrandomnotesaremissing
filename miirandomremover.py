@@ -12,7 +12,8 @@ csv_string = py_midicsv.midi_to_csv("midifile.mid")
 
 new_csvstring = []
 
-newtimestamp = 10000
+timestampinterval = 10000
+newtimestamp = timestampinterval
 modifynext = 0 
 
 for x in csv_string:
@@ -23,7 +24,7 @@ for x in csv_string:
     if (modifynext > 0 and csvpart[2] == " Note_on_c"):
         modifynext -= 1 
         if (modifynext == 0):
-            newtimestamp += 10000 + random.randint(-2000,2000)
+            newtimestamp += timestampinterval + random.randint(-timestampinterval/5,timestampinterval/5)
     else:
         new_csvstring.append(x)
 

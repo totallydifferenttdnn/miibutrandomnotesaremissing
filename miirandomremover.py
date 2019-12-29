@@ -19,7 +19,7 @@ modifynext = 0
 for x in csv_string:
     csvpart = x.split(",")
     if (csvpart[2] == " Note_on_c" and modifynext == 0 and int(csvpart[1]) > newtimestamp):
-        modifynext = 2
+        modifynext = 3
     
     if (modifynext > 0 and csvpart[2] == " Note_on_c"):
         modifynext -= 1 
